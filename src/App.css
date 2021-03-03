@@ -6,7 +6,7 @@ body{
 
 .bar{
   min-height: 5vh;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 .one{
   width: 100%;
