@@ -5,9 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ScrollHandler } from './Stores/ScrollHandler';
 import { Provider } from 'mobx-react';
+import { Styles } from './Stores/Styles';
 
 const scrollHandler = new ScrollHandler();
-const stores = { scrollHandler } 
+const styles = new Styles();
+const stores = { scrollHandler,styles } 
 
 ReactDOM.render(
   <Provider {...stores}>

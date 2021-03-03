@@ -1,9 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+#test{
+  background-color: #05386B;
+}
 body{
   height: 100%; 
   overflow: hidden;
   touch-action: none;
 }
-
+.large-text{
+  font-size: 6vmin;
+}
+.medium-text{
+  font-size: 4vmin;
+}
+.text-style{
+  /* font-family: 'Permanent Marker', cursive; */
+  color: #05386B;
+}
+#me{
+  border-radius: 100vh;
+  height: 20vh;
+  /* border: solid 5px #EDF5E1; */
+}
 .bar{
   min-height: 5vh;
   /* background-color: transparent; */
@@ -11,10 +30,10 @@ body{
 .one{
   width: 100%;
   height: 100vh;
-  padding-top: 20vh;
+  padding-top: 10vh;
 }
-.yellow{
-  background-color: yellow;
+.home{
+  background-color: #5CDB95;
 }
 .blue{
   background-color: blue;

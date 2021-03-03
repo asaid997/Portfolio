@@ -20,7 +20,7 @@ export class ScrollHandler {
     setComps = arr => this.comps = arr;
 
     handleTabChange = (_, newVal) => this.index = newVal;
-    scrollIntoComp = comp => comp.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scrollTo = comp => comp.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     goUp = () => {
         if (this.index < this.comps.length - 1)
@@ -34,7 +34,7 @@ export class ScrollHandler {
     }
 
     triggerScrollAndUnlock = i => {
-        this.scrollIntoComp(this.comps[i]);
+        this.scrollTo(this.comps[i]);
         setTimeout(() => { this.lock = true }, 600); //to prevent double scrollIntoView
     }
 
@@ -62,11 +62,4 @@ export class ScrollHandler {
             }
         }
     }
-
-    useStyles = makeStyles(() => ({
-        bar: {
-          backgroundColor: 'white',
-          color: 'black'
-        },
-    }));
 }
