@@ -4,6 +4,7 @@ import { AppBar, Hidden, Tab, Tabs, withStyles } from '@material-ui/core';
 import { inject, observer } from 'mobx-react';
 import Home from './Components/Home';
 import ParticlesBg from 'particles-bg';
+import About from './Components/About';
 
 function App(props) {
   const {scrollHandler,styles} = props;
@@ -11,12 +12,12 @@ function App(props) {
 
   //My component references
   const home = createRef(null);
-  const blue = createRef(null);
+  const about = createRef(null);
   const green = createRef(null);
   const red = createRef(null);
 
   useEffect(() => {
-    scrollHandler.setComps([home,blue, green, red]);
+    scrollHandler.setComps([home,about, green, red]);
   },[])
   useEffect(()=>{
     scrollHandler.triggerScrollAndUnlock(scrollHandler.index);
@@ -59,7 +60,7 @@ function App(props) {
         <AppBar className={`bar ${classes.bar}`}>
             <CustomTabs value={scrollHandler.index} onChange={scrollHandler.handleTabChange} centered>
               <Tab label="Home" />
-              <Tab label="Blue" />
+              <Tab label="About" />
               <Tab label="Green" />
               <Tab label="Red"  />
             </CustomTabs>
@@ -70,7 +71,7 @@ function App(props) {
           onTouchStart={scrollHandler.handleTouchStart}
           onTouchEnd={scrollHandler.handleTouchEnd}>
         <div className="one " ref={home}><Home /></div>
-        <div className="one blue" ref={blue}></div>
+        <div className="one blue" ref={about}><About /></div>
         <div className="one green" ref={green}></div>
         <div className="one red" ref={red}></div>
       </div>
