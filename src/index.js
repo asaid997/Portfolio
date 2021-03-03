@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ScrollHandler } from './Stores/ScrollHandler';
+import { Provider } from 'mobx-react';
+
+const scrollHandler = new ScrollHandler();
+const stores = { scrollHandler } 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider {...stores}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
