@@ -1,0 +1,11 @@
+.large-text{
+    font-size: 6vmin;
+  }
+  .medium-text{
+    font-size: 4vmin;
+  }
+  #me{
+    border-radius: 100vh;
+    height: 20vh;
+    box-shadow: 2px 8px 8px grey;
+  }

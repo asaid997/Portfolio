@@ -35,7 +35,7 @@ export class ScrollHandler {
 
     triggerScrollAndUnlock = i => {
         this.scrollTo(this.comps[i]);
-        setTimeout(() => { this.lock = true }, 600); //to prevent double scrollIntoView
+        setTimeout(() => { this.lock = true }, 800); //to prevent double scrollIntoView
     }
 
 
