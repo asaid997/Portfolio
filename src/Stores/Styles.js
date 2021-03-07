@@ -1,12 +1,14 @@
-import { makeStyles, Tabs, withStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 export class Styles {
     constructor() { 
         this.lightCyan = "#04c2c9";
-        this.darkCyan = "#03878C";
+        this.darkCyan = "#00a1a7";
         this.black = "black";
         this.white = 'white';
-        this.background = "#e8ecf1"
+        this.grey = '#f3f1ef';
+        this.background = "#e8ecf1";
+        this.font = 'Raleway, Arial';
     }
 
     barStyles = {
@@ -15,47 +17,87 @@ export class Styles {
                 backgroundColor: this.white,
                 color: this.black,
                 fontStyle: 'normal',
-                fontFamily: 'Raleway, Arial',
+                fontFamily: this.font,
+                minHeight: "5vh",
+                "z-index": 1,
             },
-        })),
-        customTabs: () => withStyles({
             indicator: {
                 backgroundColor: this.black,
             },
-        })(Tabs)
+        }))
     }
-
     homeStyles = {
-        
+        useStyles: makeStyles(() => ({
+            intro: {
+                fontSize: "6vmin",
+            },
+            mediumText: {
+                fontSize: "4vmin",
+            },
+            myImage: {
+                "border-radius": "100vh",
+                height: "20vh",
+                // "box-shadow": "2px 8px 8px grey",
+            },
+        }))
     }
     aboutSyles = {
         useStyles: makeStyles(() => ({
-            "about-head": {
-                borderBottom: "6px solid #05386B",
-                fontSize: "5vh"
-            }
+            aboutHead: {
+                fontSize: "5vh",
+                marginTop: "2vh"
+            },
+            aboutHeadBottom: {
+                "border-top": `5px solid ${this.darkCyan}`,
+                width: "15vh",
+                height: "0px",
+            },
         })),
     }
 
-    meanuActionStyle = {
-        useStyles: makeStyles(theme => ({
-            "menue-action-btn": {
-            position: "fixed",
-            backgroundColor: "#04C1C8",
-            right: "10px",
-            bottom: "10px",
-            width: "9vh",
-            height: "9vh",
-            // animation: "1s ease-out 0s 1 $slideInFromRight",
-            animation: `$slideInFromRight 1000ms ${theme.transitions.easing.easeInOut}`
+    progressStyle = {
+        useStyles: makeStyles(() => ({
+            container: {
+                width: "80%",
+                backgroundColor: this.grey,
+                height: "2.5vh",
+                "border-radius": "2px",
+                fontSize: "1.6vh",
+                fontFamily: this.font,
+                position: "relative",
+                "border-bottom-right-radius": "2px",
+                "border-top-right-radius": "2px",
+                marginTop: "1vh",
             },
-            "@keyframes slideInFromRight": {
-                "0%": {
-                  transform: "translateX(+100%)"
-                },
-                "100%": {
-                  transform: "translateX(0)"
-                }
+            tag: {
+                backgroundColor: this.lightCyan,
+                width: "15%",
+                color: this.white,
+                height: "100%",
+                "border-bottom-left-radius": "2px",
+                "border-top-left-radius": "2px",
+                float: 'left',
+                
+            },
+            progress:{
+                height: "100%",
+                backgroundColor: this.darkCyan,
+            },
+            progressContainer:{
+                height: "100%",
+                float: 'left',
+            },
+
+            percent: {
+                position: "absolute",
+                float: 'left',
+                right: "10px",
+                color: "#666"
+            },
+            centerText: {
+                justifyContent: "center",
+                alignContent: "center",
+                display: "grid"
             }
         }))
     }
