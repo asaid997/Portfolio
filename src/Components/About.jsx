@@ -1,8 +1,9 @@
 import { Grid, Hidden } from '@material-ui/core'
 import { inject, observer } from 'mobx-react';
 import React from 'react'
-import Nonagon from './Nonagon';
-import ProgressBar from './ProgressBar';
+import Nonagon from './Helpers/Nonagon';
+import ProgressBar from './Helpers/ProgressBar';
+import DevicesIcon from '@material-ui/icons/Devices';
 
 function About(props) {
     const { styles } = props;
@@ -23,10 +24,10 @@ function About(props) {
         ['CSS',80],
     ]
     const tablets = [
-        ['title','additional info','more shit','icon'],
-        ['responsive','additional info','more shit','icon'],
-        ['Accountible','additional info','more shit','icon'],
-        ['ahhh','additional info','more shit','icon'],
+        ['title','additional info','more shit',<DevicesIcon className="icon"/>],
+        ['responsive','additional info','more shit',<DevicesIcon className="icon"/>],
+        ['Accountible','additional info','more shit',<DevicesIcon className="icon"/>],
+        ['ahhh','additional info','more shit',<DevicesIcon className="icon"/>],
     ]
 
     return (
@@ -51,7 +52,6 @@ function About(props) {
                     </div>
             </Grid>
 
-
             <Grid item container direction="row" spacing={6}>
                 <Grid data-aos="my-slide-right" item container justify="center" alignItems="center" xs={12} md={6} spacing={2}>
                     {subjects.map((s,i) => <ProgressBar key={s[0]} subject={s[0]} percent={s[1]} i={i}/>)}
@@ -60,6 +60,7 @@ function About(props) {
                     {tablets.map( (t,i) => 
                     <Grid  container direction="column" alignItems="center" item md={6} xs={3}> 
                         <div data-aos="my-flip" data-aos-anchor="#about-head" data-aos-delay={`${i*4}00`}>
+                            {/* {t[3]} */}
                             <Nonagon />
                         </div>
                         <p data-aos="zoom-in" data-aos-anchor="#about-head" data-aos-delay={`${i*4}00`} className="medium-text aligned-text">
@@ -71,11 +72,6 @@ function About(props) {
                     </Grid>)}
                 </Grid>
             </Grid>
-            <Hidden mdDown>
-                <Grid item xs={12}>
-                    
-                </Grid>
-            </Hidden>
         </Grid>
     )
 }

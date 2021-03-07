@@ -11,19 +11,23 @@ export class Styles {
         this.font = 'Raleway, Arial';
     }
 
+    barHeight = "5vh";
     barStyles = {
         useStyles: makeStyles(() => ({
             bar: {
                 backgroundColor: this.white,
                 color: this.black,
-                fontStyle: 'normal',
-                fontFamily: this.font,
-                minHeight: "5vh",
                 "z-index": 1,
+                minHeight: this.barHeight,
+                height: this.barHeight
             },
             indicator: {
                 backgroundColor: this.black,
             },
+            tabRoot: {
+              minHeight: this.barHeight,
+              height: this.barHeight
+            }
         }))
     }
     homeStyles = {

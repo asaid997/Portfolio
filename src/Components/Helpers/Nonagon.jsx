@@ -1,5 +1,5 @@
 import React from 'react'
-import './Nonagon.css'
+import '../../css-files/Nonagon.css'
 
 export default function Nonagon() {
     return (

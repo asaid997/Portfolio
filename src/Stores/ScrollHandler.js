@@ -23,6 +23,7 @@ export class ScrollHandler {
     setComps = arr => this.comps = arr;
     getComp = i => this.comps[i];
 
+    // handleTabChange = (_, newVal) => {};
     handleTabChange = (_, newVal) => this.index = newVal;
     scrollTo = comp => {
         if(this.first){

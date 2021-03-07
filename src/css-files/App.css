@@ -18,7 +18,7 @@ body{
   text-shadow: 3px 5px 5px grey;
 }
 .section{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 .home{
@@ -29,7 +29,7 @@ body{
   background-color: white;
 }
 .red{
-  background-color: red;
+  background-color: white;
 }
 
 .slide-bar{
@@ -99,4 +99,11 @@ body{
   }
   .aligned-text{
     text-align: center;
+  }
+  .icon{
+    /* position: absolute; */
+    font-size: 400px;
+    /* top: calc(50% - 2.5vh);
+    right: calc(50% - 2.5vh); */
+    z-index: 2;
   }

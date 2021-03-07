@@ -1,5 +1,5 @@
-import './App.css';
-import './Animations.scss';
+import './css-files/App.css';
+import './css-files/Animations.scss';
 import 'aos/dist/aos.css'
 import React, { createRef, useEffect, useLayoutEffect } from 'react';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
@@ -9,7 +9,7 @@ import ParticlesBg from 'particles-bg';
 import About from './Components/About';
 import Aos from 'aos'
 import smoothscroll from 'smoothscroll-polyfill';
-import Loading from './Components/Loading';
+import Loading from './Components/Helpers/Loading';
 
 function App(props) {
   const { scrollHandler, styles } = props;
@@ -31,7 +31,6 @@ function App(props) {
     const comps = [home, about, green, red];
     scrollHandler.setComps(comps)
     
-    // window.scrollTo(0,0);
     //in order to scroll from the bottom to the top i made this loop and each time it scrollsInto the above view with a timeout delay 
     //to achieve a more smooth transition
     window.scrollTo(0,document.body.scrollHeight);
@@ -56,8 +55,8 @@ function App(props) {
       <Loading toShow={scrollHandler.toShowLoading}/>
       <ParticlesBg num={6} type="square" bg={true} />
       <AppBar className={navClasses.bar}>
-        <Tabs classes={{indicator: navClasses.indicator }} value={scrollHandler.index} onChange={scrollHandler.handleTabChange} centered>
-          {sections.map((s,i) => <Tab className="slide-bar" key={s} label={s} />)}
+        <Tabs classes={{indicator: navClasses.indicator,root:  navClasses.bar}} value={scrollHandler.index} onChange={scrollHandler.handleTabChange} centered>
+          {sections.map((s,i) => <Tab className={`slide-bar ${navClasses.tabRoot}`} key={s} label={s} />)}
         </Tabs>
       </AppBar>
       <div className="App"
