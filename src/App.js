@@ -35,7 +35,7 @@ function App(props) {
     //in order to scroll from the bottom to the top i made this loop and each time it scrollsInto the above view with a timeout delay 
     //to achieve a more smooth transition
     window.scrollTo(0,document.body.scrollHeight);
-    comps.forEach((_,i) => setTimeout(()=>comps[comps.length-1-i].current.scrollIntoView({ behavior: 'smooth', block: 'start'}),((i+1)*200)+200))
+    comps.forEach((_,i) => setTimeout(()=>comps[comps.length-1-i].current.scrollIntoView({ behavior: 'smooth', block: 'start'}),((i+1)*200)))
 
     //remove lopading gif
     document.getElementById("initial-loading").remove();

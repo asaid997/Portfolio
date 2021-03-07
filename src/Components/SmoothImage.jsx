@@ -5,14 +5,12 @@ const proptypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   placeholderImgUrl: PropTypes.string,
-  containerStyles: PropTypes.object,
   imageStyles: PropTypes.string,
   transitionTime: PropTypes.number,
-  transitionTimingFunction: PropTypes.string,
+
 };
 
 const defaultProps = {
-  containerStyles: {},
   imageStyles: {},
   transitionTime: 0.3,
   transitionTimingFunction: 'ease-in',
@@ -62,8 +60,6 @@ export default class SmoothImage extends React.Component {
             opacity: 0,
             overflow: 'hidden',
             backgroundImage: bgImage,
-            // if you do not want square images, overwrite the paddingBottom % by
-            // passing from containerStyles
             paddingBottom: '22vh',
             backgroundSize: 'cover',
           },

@@ -33,8 +33,7 @@ body{
 }
 
 .slide-bar{
-  animation: slide-down 1000ms ;
-  animation-delay: 1500ms;
+  animation: slide-down 3000ms ;
 }
 
 @keyframes slide-down {

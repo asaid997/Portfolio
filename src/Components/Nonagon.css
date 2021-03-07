@@ -12,7 +12,6 @@
     .square,.nonagon-container{
         width: 3.84375vh;
         height: 9.375vh;
-        /* left: calc(50% - (3.84375vh/2)); */
     }
 
   }
@@ -20,13 +19,11 @@
     .square,.nonagon-container{
         width: 3.5875vh;
         height: 8.75vh;
-        /* left: calc(30% - (4.305vh/2)); */
     }
    }
    @media screen and  (min-width: 1085px){
     .square,.nonagon-container{
         width: 5.125vh;
         height: 12.5vh;
-        /* left: calc(25% - (6.15vh/2)); */
     }
    }
