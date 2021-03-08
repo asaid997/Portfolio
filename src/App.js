@@ -10,6 +10,7 @@ import About from './Components/About';
 import Aos from 'aos'
 import smoothscroll from 'smoothscroll-polyfill';
 import Loading from './Components/Helpers/Loading';
+import Education from './Components/Education';
 
 function App(props) {
   const { scrollHandler, styles } = props;
@@ -19,16 +20,13 @@ function App(props) {
   //My component references
   const home = createRef(null);
   const about = createRef(null);
-  const green = createRef(null);
+  const education = createRef(null);
   const red = createRef(null);
-  const sections = ['Home', 'About', 'Green', 'Red']
+  const sections = ['Home', 'About', 'Education', 'Red']
 
   useEffect(() => {
-    //adding safari compitabilaty
-    window.__forceSmoothScrollPolyfill__ = true;
-    smoothscroll.polyfill();
-
-    const comps = [home, about, green, red];
+    //send all my sections to the scroll handler store
+    const comps = [home, about, education, red];
     scrollHandler.setComps(comps)
     
     //in order to scroll from the bottom to the top i made this loop and each time it scrollsInto the above view with a timeout delay 
@@ -37,13 +35,18 @@ function App(props) {
     comps.forEach((_,i) => setTimeout(()=>comps[comps.length-1-i].current.scrollIntoView({ behavior: 'smooth', block: 'start'}),((i+1)*200)))
 
     //remove lopading gif
-    document.getElementById("initial-loading").remove();
+    const loadingGif = document.getElementById("initial-loading");
+    loadingGif && loadingGif.remove();
 
     //initialise aos(animation on scroll) to start working after 1.5 seconds
     setTimeout(()=> Aos.init({ duration: 1000, once: true }),1500)
   }, [])
   
   useLayoutEffect(()=> {
+    //adding safari compitabilaty
+    window.__forceSmoothScrollPolyfill__ = true;
+    smoothscroll.polyfill();
+
     if ('scrollRestoration' in window.history) 
       window.history.scrollRestoration = 'manual'
   },[]);
@@ -64,9 +67,9 @@ function App(props) {
         onTouchStart={scrollHandler.handleTouchStart}
         onTouchEnd={scrollHandler.handleTouchEnd}>
         <div className="section home" ref={home}><Home /></div>
-        <div className="section about" ref={about}><About /></div>
-        <div className="section " ref={green}></div>
-        <div className="section red" ref={red}></div>
+        <div className="section white-background padding-5" ref={about}><About /></div>
+        <div className="section padding-5" ref={education}><Education /></div>
+        <div className="section white-background padding-5" ref={red}></div>
       </div>
     </div>
   );

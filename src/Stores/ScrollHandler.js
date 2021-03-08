@@ -23,11 +23,11 @@ export class ScrollHandler {
     setComps = arr => this.comps = arr;
     getComp = i => this.comps[i];
 
-    // handleTabChange = (_, newVal) => {};
     handleTabChange = (_, newVal) => this.index = newVal;
     scrollTo = comp => {
+        //with the way react is and because i added a listener to the index var the useeffect will trigger 
+        //a scroll to the first component(index initialised with 0) this basically checks if its the first and unwanted scroll request
         if(this.first){
-            console.log("attemps to scroll",this.index);
             comp.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         else
@@ -45,6 +45,7 @@ export class ScrollHandler {
         else this.lock = true;
     }
 
+    //unlocks the wheel scroll lock(wheels sends a lot of triggers)
     triggerScrollAndUnlock = i => {
         this.timeout && clearTimeout(this.timeout)
         this.scrollTo(this.comps[this.index]);
@@ -59,12 +60,13 @@ export class ScrollHandler {
         if (dist > 50){
             if (this.index > 0)
                 this.index = this.index - 1;
+            //reloads the page
             else{
                 this.toShowLoading = true;
                 setTimeout(() => {
                     this.toShowLoading = false
                     window.location.reload();
-                }, 800);
+                }, 500);
             }
         }
         else if (dist < -50)

@@ -4,9 +4,10 @@ export class Styles {
     constructor() { 
         this.lightCyan = "#04c2c9";
         this.darkCyan = "#00a1a7";
+        this.red = "#FF6B6B";
         this.black = "black";
         this.white = 'white';
-        this.grey = '#f3f1ef';
+        this.grey = '#f5f6fa';
         this.background = "#e8ecf1";
         this.font = 'Raleway, Arial';
     }
@@ -26,7 +27,7 @@ export class Styles {
             },
             tabRoot: {
               minHeight: this.barHeight,
-              height: this.barHeight
+              height: this.barHeight,
             }
         }))
     }
@@ -36,7 +37,7 @@ export class Styles {
                 fontSize: "6vmin",
             },
             mediumText: {
-                fontSize: "4vmin",
+                fontSize: "4vmin"            
             },
             myImage: {
                 "border-radius": "100vh",
@@ -48,13 +49,19 @@ export class Styles {
     aboutSyles = {
         useStyles: makeStyles(() => ({
             aboutHead: {
-                fontSize: "5vh",
+                fontSize: "4vh",
                 marginTop: "2vh"
             },
             aboutHeadBottom: {
-                "border-top": `5px solid ${this.darkCyan}`,
+                "border-top": `5px solid ${this.red}`,
                 width: "15vh",
                 height: "0px",
+            },
+            icon:{
+                position: 'absolute',
+                'justify-self': 'center',
+                'align-self': 'center',
+                zIndex: '2',
             },
         })),
     }
@@ -63,15 +70,14 @@ export class Styles {
         useStyles: makeStyles(() => ({
             container: {
                 width: "80%",
+                height: "6%",
                 backgroundColor: this.grey,
-                height: "2.5vh",
                 "border-radius": "2px",
                 fontSize: "1.6vh",
-                fontFamily: this.font,
+                // fontFamily: this.font,
                 position: "relative",
                 "border-bottom-right-radius": "2px",
                 "border-top-right-radius": "2px",
-                marginTop: "1vh",
             },
             tag: {
                 backgroundColor: this.lightCyan,

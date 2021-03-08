@@ -11,7 +11,7 @@ function Home(props) {
 
     useEffect(() => {
         setTimeout(() => new Typewriter('#typEffect', {
-            strings: ['Full stack developer', 'Software developer'],
+            strings: ['Full Stack Developer', 'Software Developer'],
             autoStart: true,
             loop: true
         }),1500);
@@ -30,8 +30,8 @@ function Home(props) {
                 transitionTime={0.5}
                 imageStyles={classes.myImage}/>
                 
-            <h1 data-aos="zoom-in" className={`text-style ${classes.intro} `}>Hello, I'm Androw</h1>
-            <h2 id="typEffect" className={`text-style ${classes.mediumText}`}></h2>
+            <h1 data-aos="zoom-in" className={`text-style ${classes.intro} main-font`}>Hello, I'm Androw</h1>
+            <h2 id="typEffect" className={`text-style font-light ${classes.mediumText}`}></h2>
         </Grid>
     )
 }
