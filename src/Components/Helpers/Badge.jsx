@@ -12,7 +12,7 @@ export default function Badge(props) {
                 <Octagon color={(i==1 || i==2) ? 'dark' : 'light'}/>
             </div>
             <p data-aos="zoom-in" data-aos-anchor="#about-head"
-                data-aos-delay={`${i * 4}00`} className="medium-text center-text">
+                data-aos-delay={`${i * 4 +2}00`} className="medium-text center-text">
                 <span className="font-bolder">{t[0]}</span>
                 <br />
                 <span className="font-light">{t[1]}</span>

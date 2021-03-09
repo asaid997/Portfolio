@@ -8,11 +8,7 @@ import GroupOutlinedIcon from '@material-ui/icons/GroupOutlined';
 import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
 import Badge from './Helpers/Badge';
 
-function About(props) {
-    const { styles } = props;
-    const { aboutSyles } = styles;
-    const classes = aboutSyles.useStyles();
-
+function About() {
     const subjects = [
         ['Java',90],
         ['JS',90],
@@ -29,8 +25,8 @@ function About(props) {
 
     const iconSize = '6vmin';
     const tablets = [
-        ['Team player','Commited to the teams success.',<GroupOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
-        ['Clean code','Follow oop and mvc principles.',<CodeOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
+        ['Team player','Commited to my teams success.',<GroupOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
+        ['Clean code','Follows oop and mvc principles.',<CodeOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
         ['Organized','Carefully plan projects.',<PlaylistAddCheckIcon className="icon" style={{fontSize: iconSize}}/>],
         ['Responsive','Layouts work on any device.',<DevicesIcon className="icon" style={{fontSize: iconSize}}/>],
     ]
@@ -44,12 +40,12 @@ function About(props) {
             alignItems="center"
         >
             <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                <div id="about-head" data-aos="my-slide-right" data-aos-delay="400" className={`main-font text-style ${classes.aboutHead}`} >About</div>
-                <div data-aos="my-slide-right" className={classes.aboutHeadBottom}></div>
+                <div id="about-head" data-aos="my-slide-right" data-aos-delay="400" className="text-style header" >About</div>
+                <div data-aos="my-slide-right" className="header-line"></div>
             </Grid>
 
             <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                    <div className="paper-container medium-text font-bolder" data-aos="zoom-in-right">
+                    <div className="paper-container medium-text font-bold" data-aos="zoom-in-right">
                             <p>
                                 Enrolled in a BSc of computer sience.<br/>
                                 <div className="divider"></div>
@@ -57,7 +53,7 @@ function About(props) {
                                 <div className="divider"></div>
                                 Love exploring new domains of programming and computer sience.<br/>
                                 <div className="divider"></div>
-                                Currently seeking an internship/student position.
+                                Currently seeking an entry position.
                             </p>
                     </div>
             </Grid>
@@ -74,4 +70,4 @@ function About(props) {
     )
 }
 
-export default inject("styles")(observer(About));
+export default About;

@@ -24,6 +24,15 @@
         transform: scale(1, 1);
     }
 }
+[data-aos="my-flip-right"]{
+    opacity: 0;
+    transform: scale(0, 1);
+    transition-property: transform,opacity;
+    &.aos-animate {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
 [data-aos="my-slide-left"]{
     transform:translate3d(+800%,0,0);
     transition-property: transform;

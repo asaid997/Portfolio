@@ -31,9 +31,6 @@ body{
 .padding-5{
   padding-top: 5vh;
 }
-.main-font{
-  font-family: 'Raleway', sans-serif;
-}
 
 /* .slide-bar{
   animation: slide-down 3000ms ;
@@ -63,10 +60,14 @@ body{
 
  @media screen and  (min-width: 320px){
    .medium-text{
-     font-size: 70%;
+     font-size: 3vmin;
+   }
+   .divider{
+    height: 0.3vh;
    }
    .paper-container{
     width: 80vw;
+    height: 11vh;
   }
   .all-progress-container{
     height: 40vh;
@@ -75,10 +76,14 @@ body{
  }
   @media screen and  (min-width: 760px){
     .medium-text{
-      font-size: 100%;
+      font-size: 1.9vmin;
       text-align: center;
     }
+    .divider{
+      height: 0.8vh;
+    }
     .paper-container{
+      height: 10vh;
       justify-items: center;
       align-items: center;
     }
@@ -88,7 +93,7 @@ body{
   }
   @media screen and  (min-width: 1085px){
     .medium-text{
-      font-size: 100%;
+      font-size: 1.8vmin;
     }
     .paper-container{
       width: 50vw;
@@ -106,7 +111,6 @@ body{
   .paper-container{
     margin-top: 2vh;
     margin-bottom: 2vh;
-    height: 10vh;
     padding: 2vh;
     background-color: #f5f6fa;
     color: rgb(61, 61, 61);
@@ -127,9 +131,6 @@ body{
   .center-text{
     text-align: center;
   }
-  .divider{
-    height: 0.8vh;
-  }
   p{
     margin-top: 0em;
     margin-bottom: 0em;
@@ -139,4 +140,22 @@ body{
   }
   .font-bolder{
     font-weight: bolder;
+  }
+  .font-bold{
+    font-weight: light;
+  }
+
+  .header{
+    font-size: 4vh;
+    margin-top: 2vh;
+  }
+  .header-line{
+    border-top: 5px solid #FF6B6B;
+    width: 15vh;
+  }
+  .not-selectable{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
   }
