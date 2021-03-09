@@ -1,16 +1,29 @@
-.card-media{
+.card-media {
     width: 80%!important;
     height: auto;
 }
+.card-media-projects {
+    width: 90%!important;
+    height: auto;
+    box-shadow: 2px 2px 8px grey;
+    border-radius: 3px;
+}
+
 .card-media-container {
     display: grid;
     align-items: center;
     justify-items: center;
     width: 100%;
 }
-.syllabus{
+.card-media-container-projects {
+    display: grid;
+    align-items: center;
+    justify-items: center;
     width: 100%;
-    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
     border-top-left-radius: 0px!important;
     border-top-right-radius: 0px!important;
     opacity: 1;
@@ -21,74 +34,64 @@
     justify-items: center;
     align-items: center;
 }
-.syllabus:hover{
+
+.btn:hover {
     opacity: 0.8;
 }
 
-@keyframes fill {
-    0%{
-     opacity:0;
-    }
-   
-   100% {
-     opacity:0.5;
-    }
-}
-
-.syllabus-icon{
-    font-size: 7vw!important;
-}
-
-
-
-@media screen and  (min-width: 320px){
-    .card{
+@media screen and (min-width: 320px) {
+    .card {
         width: 40vw;
         height: 34vh;
     }
-    .card-media-container{
+    .card-media-container, .card-media-container-projects{
         height: 16.5vh;
     }
-    .content-container{
+    .content-container {
         height: 12vh;
     }
-    .syllabus{
+    .btn {
         height: 5.5vh;
     }
-  }
-   @media screen and  (min-width: 760px){
-    .card{
+    .btn-icon {
+        font-size: 5vmin!important;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .card {
         width: 30vw;
         height: 35vh;
     }
-    .card-media-container{
+    .card-media-container, .card-media-container-projects{
         height: 16.5vh;
     }
-    .content-container{
+    .content-container {
         height: 11vh;
     }
-    .syllabus{
+    .btn {
         height: 7.5vh;
     }
-    .syllabus-icon{
-        font-size: 5vw!important;
+    .btn-icon {
+        font-size: 4vmin!important;
     }
-   }
-   @media screen and  (min-width: 1085px){
-    .card{
+}
+
+@media screen and (min-width: 1085px) {
+    .card {
         width: 20vw;
         height: 45vh;
     }
-    .card-media-container{
+    .card-media-container, .card-media-container-projects{
         height: 28vh;
     }
-    .content-container{
+    .content-container {
         height: 11vh;
     }
-    .syllabus{
+    .btn {
         height: 6vh;
     }
-    .syllabus-icon{
-        font-size: 2.5vw!important;
+    .btn-icon {
+        font-size: 4vmin!important;
     }
-   }
+}

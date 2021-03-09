@@ -1,5 +1,4 @@
 import { Grid } from '@material-ui/core'
-import { inject, observer } from 'mobx-react';
 import React from 'react'
 import ProgressBar from './Helpers/ProgressBar';
 import DevicesIcon from '@material-ui/icons/Devices';

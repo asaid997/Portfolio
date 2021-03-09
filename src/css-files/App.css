@@ -159,3 +159,9 @@ body{
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
   }
+  #education-container{
+    margin-top: 2vh;
+}
+  #projects-container{
+    margin-top: 2vh;
+}

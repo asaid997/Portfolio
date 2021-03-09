@@ -11,6 +11,7 @@ import Aos from 'aos'
 import smoothscroll from 'smoothscroll-polyfill';
 import Loading from './Components/Helpers/Loading';
 import Education from './Components/Education';
+import Projects from './Components/Projects';
 
 function App(props) {
   const { scrollHandler, styles } = props;
@@ -21,12 +22,12 @@ function App(props) {
   const home = createRef(null);
   const about = createRef(null);
   const education = createRef(null);
-  const red = createRef(null);
-  const sections = ['Home', 'About', 'Education', 'Red']
+  const projects = createRef(null);
+  const sections = ['Home', 'About', 'Education', 'Projects']
 
   useEffect(() => {
     //send all my sections to the scroll handler store
-    const comps = [home, about, education, red];
+    const comps = [home, about, education, projects];
     scrollHandler.setComps(comps)
     
     //in order to scroll from the bottom to the top i made this loop and each time it scrollsInto the above view with a timeout delay 
@@ -69,7 +70,7 @@ function App(props) {
         <div className="section home" ref={home}><Home /></div>
         <div className="section white-background padding-5" ref={about}><About /></div>
         <div className="section padding-5" ref={education}><Education /></div>
-        <div className="section white-background padding-5" ref={red}></div>
+        <div className="section white-background padding-5" ref={projects}> <Projects /></div>
       </div>
     </div>
   );
