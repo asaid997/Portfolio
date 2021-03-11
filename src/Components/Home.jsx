@@ -2,7 +2,6 @@ import { Grid } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core';
 import { inject, observer } from 'mobx-react';
-import SmoothImage from './Helpers/SmoothImage';
 
 function Home(props) {
     const { styles } = props;
@@ -24,14 +23,10 @@ function Home(props) {
             justify="center"
             alignItems="center">
 
-            <SmoothImage
-                src="ana.jpg"
-                alt="me"
-                transitionTime={0.5}
-                imageStyles={classes.myImage}/>
+            <img src="ana.jpg" alt="" className={classes.myImage}/>
                 
-            <h1 data-aos="zoom-in" className={`text-style ${classes.intro} main-font`}>Hello, I'm Androw</h1>
-            <h2 id="typEffect" className={`text-style font-light ${classes.mediumText}`}></h2>
+            <h1 data-aos="zoom-in" className={`text-style ${classes.intro} main-font font-light`}>Hello, I'm Androw</h1>
+            <h3 id="typEffect" className={`text-style font-light ${classes.mediumText}`}></h3>
         </Grid>
     )
 }

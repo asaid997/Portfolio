@@ -6,6 +6,7 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import GroupOutlinedIcon from '@material-ui/icons/GroupOutlined';
 import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
 import Badge from './Helpers/Badge';
+import Title from './Helpers/Title';
 
 function About() {
     const subjects = [
@@ -38,31 +39,25 @@ function About() {
             justify="center"
             alignItems="center"
         >
+            <Title title="About"/>
             <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                <div id="about-head" data-aos="my-slide-right" data-aos-delay="400" className="text-style header" >About</div>
-                <div data-aos="my-slide-right" className="header-line"></div>
-            </Grid>
-
-            <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                    <div className="paper-container medium-text font-bold" data-aos="zoom-in-right">
-                            <p>
-                                Enrolled in a BSc of computer sience.<br/>
-                                <div className="divider"></div>
-                                Software developer who loves to build and create.<br/>
-                                <div className="divider"></div>
-                                Love exploring new domains of programming and computer sience.<br/>
-                                <div className="divider"></div>
-                                Currently seeking an entry position.
-                            </p>
+                    <div className="paper-container medium-text font-bolder" data-aos="zoom-in-right" data-aos-delay="700">
+                            <ul>
+                                <li>Enrolled in a BSc of computer sience.</li>
+                                <li>Software developer who loves to build and create.</li>
+                                <li>Love exploring new domains of programming and computer sience.</li>
+                                <li>Currently seeking an entry position.</li>
+                            </ul>
                     </div>
             </Grid>
 
             <Grid id="about-skills" item container direction="row" >
-                <Grid className="all-progress-container" item container data-aos="my-slide-right" justify="center" alignItems="center" xs={12} md={6} spacing={2}>
+                <Grid className="all-progress-container" item container data-aos="my-slide-right" data-aos-delay="700" data-aos-duration="900"
+                 justify="center" alignItems="center" xs={12} md={6} spacing={2}>
                     {subjects.map((s,i) => <ProgressBar key={s[0]} subject={s[0]} percent={s[1]} i={i}/>)}
                 </Grid>
                 <Grid className="badges-container" item container direction="row" xs={12} md={6}>
-                    {tablets.map( (t,i) => <Badge t={t} i={i}/> )}  
+                    {tablets.map( (t,i) => <Badge key={t[0]} t={t} i={i}/> )}  
                 </Grid>
             </Grid>
         </Grid>

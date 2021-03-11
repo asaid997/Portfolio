@@ -1,6 +1,7 @@
 import { Grid } from '@material-ui/core'
 import React from 'react'
 import Mcard from './Helpers/Mcard'
+import Title from './Helpers/Title';
 
 
 export default function Education() {
@@ -20,13 +21,9 @@ export default function Education() {
         justify="center"
         alignItems="center"
         >
-             <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                <div id="about-head" data-aos="my-slide-right" data-aos-delay="400" className="text-style header" >Education</div>
-                <div data-aos="my-slide-right" className="header-line"></div>
-            </Grid>
-            
+            <Title title="Education"/>
             <Grid id="education-container" item container direction="row" xs={12} spacing={2}>
-                {cards.map((arr,i) => <Grid item container {...educationCardsProps} ><Mcard arr={arr} i={i}/></Grid>)}
+                {cards.map((arr,i) => <Grid key={arr[0]} item container {...educationCardsProps} ><Mcard arr={arr} i={i}/></Grid>)}
             </Grid>
         </Grid>
     )

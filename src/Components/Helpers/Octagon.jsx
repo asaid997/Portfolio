@@ -3,7 +3,6 @@ import '../../css-files/Octagon.css'
 
 export default function Nonagon(props) {
     const {color} = props;
-    console.log(color);
     return (
         <div className="nonagon-container">
             <div className={`square ${color}`} style={{transform: "rotate(  0deg)"}}></div>

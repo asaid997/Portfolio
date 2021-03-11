@@ -42,7 +42,7 @@ export class Styles {
             myImage: {
                 "border-radius": "100vh",
                 height: "20vh",
-                // "box-shadow": "2px 8px 8px grey",
+                "box-shadow": "2px 8px 8px grey",
             },
         }))
     }

@@ -1,0 +1,40 @@
+#contact-container div{
+    margin-top: 3vh;
+}
+.center{
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    align-items: center;
+}
+
+.icon-contact{
+    cursor: pointer;
+}
+
+#icons-container{
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.cyan{
+    color: #00a1a7;
+}
+.icon-c{
+    transition: 0.5s;
+}
+.icon-c:hover{
+    opacity: 0.8;
+}
+#contact-container{
+    margin-top: 2vh;
+    border-radius: 5px;
+    padding: 2vh;
+    background-color: #f5f6fa;
+    color: rgb(61, 61, 61);
+    display: grid;
+    align-items: center;
+    -webkit-box-shadow: 2px 2px 8px grey;
+            box-shadow: 2px 2px 8px grey;
+  }

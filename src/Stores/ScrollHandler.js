@@ -3,13 +3,16 @@ import { observable, action, makeAutoObservable } from 'mobx'
 export class ScrollHandler {
     constructor() {
         this.index = 0;
+        this.scrollable = '';
         this.first = false;
         this.lock = true;
         this.timeout = null;
         this.down = null;
         this.comps = [];
         this.toShowLoading = false;
+        this.touchMove = 0;
         makeAutoObservable(this, {
+            scrollable: observable,
             index: observable,
             toShowLoading: observable,
             handleTabChange: action,
@@ -27,9 +30,8 @@ export class ScrollHandler {
     scrollTo = comp => {
         //with the way react is and because i added a listener to the index var the useeffect will trigger 
         //a scroll to the first component(index initialised with 0) this basically checks if its the first and unwanted scroll request
-        if(this.first){
+        if (this.first)
             comp.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
         else
             this.first = true;
     }
@@ -55,26 +57,28 @@ export class ScrollHandler {
     //touch events handler
     handleTouchStart = e => this.down = e.changedTouches[0].screenY;
     handleTouchEnd = e => {
-        const y = e.changedTouches[0].screenY;
-        const dist = y - this.down;
-        if (dist > 50){
-            if (this.index > 0)
-                this.index = this.index - 1;
-            //reloads the page
-            else{
-                this.toShowLoading = true;
-                setTimeout(() => {
-                    this.toShowLoading = false
-                    window.location.reload();
-                }, 500);
+        if (! /iPhone/i.test(navigator.userAgent)) {
+            const y = e.changedTouches[0].screenY;
+            const dist = y - this.down;
+            if (dist > 50) {
+                if (this.index > 0)
+                    this.index = this.index - 1;
+                //reloads the page
+                else {
+                    this.toShowLoading = true;
+                    setTimeout(() => {
+                        this.toShowLoading = false
+                        window.location.reload();
+                    }, 500);
+                }
             }
+            else if (dist < -50)
+                this.goUp();
         }
-        else if (dist < -50)
-            this.goUp();
     }
     //Wheel scroll handler
     wheelHandler = e => {
-        if (this.lock) {
+        if (this.lock && ! /iPhone/i.test(navigator.userAgent)) {
             const scroll = e.deltaY;
             if (Math.abs(scroll) > 5) {
                 this.lock = false;

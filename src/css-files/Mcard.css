@@ -1,3 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.card-container{
+    margin-top: 2vh;
+    border-radius: 6px!important;
+}
+
 .card-media {
     width: 80%!important;
     height: auto;
@@ -5,38 +17,89 @@
 .card-media-projects {
     width: 90%!important;
     height: auto;
-    box-shadow: 2px 2px 8px grey;
+    -webkit-box-shadow: 2px 2px 8px grey;
+            box-shadow: 2px 2px 8px grey;
     border-radius: 3px;
 }
 
 .card-media-container {
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     justify-items: center;
     width: 100%;
 }
 .card-media-container-projects {
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     justify-items: center;
     width: 100%;
 }
-
+.inverted{
+   -webkit-transform: scaleX(-1)!important;
+       -ms-transform: scaleX(-1)!important;
+           transform: scaleX(-1)!important; 
+}
 .btn {
     width: 100%;
     border-top-left-radius: 0px!important;
     border-top-right-radius: 0px!important;
     opacity: 1;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
-    border: 0px;
     color: white;
+    display: -ms-grid;
     display: grid;
     justify-items: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .btn:hover {
     opacity: 0.8;
+}
+.in-progress{
+    background: -o-linear-gradient(135deg, #2c3e50,#dadee0,#dadee0);
+    background: linear-gradient(-45deg, #2c3e50,#dadee0,#dadee0);
+    background-size: 400% 400%;
+    -webkit-animation: move 5s ease-in-out infinite;
+            animation: move 5s ease-in-out infinite;
+}
+.in-progress-netanya{
+    background: -o-linear-gradient(135deg, #6dd5ed,#e7eaeb,#ffffff);
+    background: linear-gradient(-45deg, #6dd5ed,#e7eaeb,#ffffff);
+    background-size: 400% 400%;
+    -webkit-animation: move 5s ease-in-out infinite;
+            animation: move 5s ease-in-out infinite;
+}
+@-webkit-keyframes move{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@keyframes move{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
 
 @media screen and (min-width: 320px) {
@@ -55,6 +118,9 @@
     }
     .btn-icon {
         font-size: 5vmin!important;
+    }
+    .speaking-person{
+        font-size: 10vmin!important;
     }
 }
 
@@ -89,7 +155,7 @@
         height: 11vh;
     }
     .btn {
-        height: 6vh;
+        height: 7vh;
     }
     .btn-icon {
         font-size: 4vmin!important;
