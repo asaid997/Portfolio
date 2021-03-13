@@ -5,10 +5,7 @@ import { inject, observer } from 'mobx-react';
 import SmoothImage from './Helpers/SmoothImage';
 import '../css-files/Home.css'
 
-function Home(props) {
-    const { styles } = props;
-    const { homeStyles } = styles;
-    const classes = homeStyles.useStyles();
+function Home() {
 
     useEffect(() => {
         setTimeout(() => new Typewriter('#typEffect', {
@@ -25,21 +22,20 @@ function Home(props) {
             justify="center"
             alignItems="center">
 
-            {/* <img
+            <img
                 src="ana.jpg"
                 alt="me"
-                // transitionTime={0.5}
-                className="my-image"/> */}
-            <SmoothImage
+                className="my-image"/>
+            {/* <SmoothImage
                 src="ana.jpg"
                 alt="me"
                 transitionTime={0.5}
-                imageStyles="my-image"/>
+                imageStyles="my-image"/> */}
                 
-            <h1 data-aos="zoom-in" className="text-style intro main-font font-light">Hello, I'm Androw</h1>
-            <h3 id="typEffect" className="text-style font-light medium-text-home"></h3>
+            <h1 data-aos="zoom-in" className="text-style intro font-light">Hello, I'm Androw</h1>
+            <h3 id="typEffect" className="text-style font-lighter medium-text-home"></h3>
         </Grid>
     )
 }
 
-export default inject("styles")(observer(Home));
+export default Home;

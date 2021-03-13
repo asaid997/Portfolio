@@ -21,7 +21,7 @@ export default function Projects() {
         >
             <Title title="Contact" color={true}/>
             <div id="contact-container" data-aos="my-slide-right" data-aos-delay="500" data-aos-duration="1000" >
-                <div className="medium-text center"><LocationOnIcon className="cyan"/>Haifa, Northern District of Israel</div>
+                <div className="medium-text center not-selectable"><LocationOnIcon className="cyan"/>Haifa, Northern District of Israel</div>
                 <div className="medium-text center"><PhoneAndroidIcon className="cyan"/>+972-54-6777110</div>
                 <div className="medium-text center"><MailIcon className="cyan"/>Androwas101@gmail.com</div>
                 <div id="icons-container">

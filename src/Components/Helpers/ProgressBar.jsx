@@ -1,23 +1,22 @@
 import { inject, observer } from 'mobx-react';
 import React from 'react'
+import '../../css-files/ProgressBar.css'
 
 function ProgressBar(props) {
-    const { styles, percent, i } = props;
-    const { progressStyle } = styles;
-    const classes = progressStyle.useStyles();
+    const { percent, i } = props;
 
     return (
-        <div className={classes.container}>
-            <div className={`${classes.tag} ${classes.centerText}`}>
+        <div className="container">
+            <div className="tag center-text-progress-bar">
                 {props.subject}
             </div>
-            <div style={{ width: `${percent - 20}%` }} className={classes.progressContainer}>
+            <div style={{ width: `${percent - 20}%` }} className="progress-container">
                 <div data-aos="width-ease" data-aos-duration="600" 
                 data-aos-anchor=".all-progress-container"
                 data-aos-delay={`${i + 14}00`}
-                 className={classes.progress}></div>
+                 className="progress"></div>
             </div>
-            <div className={`${classes.percent}`}>
+            <div className="percent">
                 {percent}%
             </div>
         </div>
@@ -26,4 +25,4 @@ function ProgressBar(props) {
 }
 
 
-export default inject("styles")(observer(ProgressBar));
+export default ProgressBar;

@@ -2,7 +2,7 @@ import './css-files/Colors.css';
 import './css-files/App.css';
 import './css-files/Animations.scss';
 import 'aos/dist/aos.css'
-import React, { createRef, useEffect, useLayoutEffect } from 'react';
+import React, { createRef, useEffect, useLayoutEffect, useState } from 'react';
 import Tabs from './Components/Helpers/Tabs'
 import { inject, observer } from 'mobx-react';
 import Home from './Components/Home';
@@ -39,10 +39,10 @@ function App(props) {
     //remove lopading gif
     const loadingGif = document.getElementById("initial-loading");
     loadingGif && loadingGif.remove();
-
+    
     //initialise aos(animation on scroll) to start working after 1.5 seconds
     setTimeout(() => Aos.init({ duration: 450, once: true}), 1500)
-  }, [])
+  }, []);
 
   useLayoutEffect(() => {
     //adding safari compitabilaty
@@ -56,15 +56,7 @@ function App(props) {
     //in order to scroll from the bottom to the top i made this loop and each time it scrollsInto the above view with a timeout delay 
     //to achieve a more smooth transition
     window.scrollTo(0, document.body.scrollHeight);
-    comps.forEach((_, i) => setTimeout(() => comps[comps.length - 1 - i].current.scrollIntoView({ behavior: 'smooth', block: 'start' }), ((i + 1) * 200)))
-
-    // document.body.classList.add("unscrollable");
-    // if (typeof window.orientation === 'undefined') { document.body.classList.add("unscrollable"); }
-    // else{
-      // window.addEventListener('scroll', function() {
-      //   console.log(window.pageYOffset + 'px',window);
-      // });
-    // }
+    comps.forEach((_, i) => setTimeout(() => comps[comps.length - 1 - i].current.scrollIntoView({ behavior: 'smooth', block: 'start' }), ((i + 1) * 200)));
 
   }, []);
 
@@ -76,20 +68,20 @@ function App(props) {
       <Loading toShow={scrollHandler.toShowLoading} />
       <ParticlesBg num={4} type="square" bg={true} />
       <Tabs sections={sections}/>
-      <div className="App"
+      <div id="app"
         onWheel={scrollHandler.wheelHandler}
         onTouchStart={scrollHandler.handleTouchStart}
         onTouchMove={scrollHandler.handleTouchMove}
         onTouchEnd={scrollHandler.handleTouchEnd}
         >
-        <div className="section home scroll-snap" ref={home}><Home /></div>
-        <div className="section white-background padding-5 scroll-snap" ref={about}><About /></div>
-        <div className="section padding-5 scroll-snap" ref={education}><Education /></div>
-        <div className="section white-background padding-5 scroll-snap" ref={projects}> <Projects /></div>
-        <div className="half-section scroll-snap" ref={contact}> <Contact /></div>
+        <div className="section home not-selectable" ref={home}><Home /></div>
+        <div className="section white-background padding-5 not-selectable" ref={about}><About /></div>
+        <div className="section padding-5 not-selectable" ref={education}><Education /></div>
+        <div className="section white-background padding-5 not-selectable" ref={projects}> <Projects /></div>
+        <div className="half-section" ref={contact}> <Contact /></div>
       </div>
     </div>
   );
 }
 
-export default inject("scrollHandler", "styles")(observer(App));
+export default inject("scrollHandler")(observer(App));

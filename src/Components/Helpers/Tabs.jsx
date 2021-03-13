@@ -10,7 +10,7 @@ function Tabs(props) {
     const Tab = (s,i) => {
         const tabHandle = () => scrollHandler.handleTabChange(null,i);
         return (
-        <Grid className={`tab-container ${scrollHandler.index === i ? 'red-border' : ''} font-bolder not-selectable`}
+        <Grid className={`tab-container ${scrollHandler.index === i ? 'selected-tab' : ''} font-bolder not-selectable`}
         key={s} item xs={2} container {...p}
         onClick={tabHandle}
         >

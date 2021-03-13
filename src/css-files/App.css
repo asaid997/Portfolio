@@ -13,17 +13,20 @@
 html{
   font-family: 'Raleway', sans-serif!important;
 }
-#container{
-  /* overflow-y: scroll;
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh; */
-  /* overflow: scroll; */
-  /* height: 100vh; */
-  /* scroll-snap-type: y mandatory;
-  scroll-snap-stop: always; */
-}
+/* .App{
+  animation: scroll-test 10s;
+} */
+
 /*add body to below style */
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
 body, html{
   overflow: hidden;
   -ms-touch-action: none;
@@ -42,14 +45,6 @@ body, html{
 }
 .full-height{
   height: 100%;
-}
-.App{
-  /* scroll-snap-type: y mandatory; */
-  /* overflow: scroll;
-  height: 10vh; */
-  /* scroll-snap-type: mandatory; */
-  /* scroll-snap-points-y: repeat(100vh); */
-  /* scroll-snap-type: y mandatory; */
 }
 .scroll-snap{
   scroll-snap-align: start;
@@ -107,9 +102,12 @@ body, html{
    top: 4vh;
    width: 80px;
    left: calc(50vw - 40px);
-   z-index: 2;
-   -webkit-animation: slide-down 100ms ;
-           animation: slide-down 100ms ;
+   z-index: -1;
+ }
+ .animate-loading{
+  z-index: 2;
+  -webkit-animation: slide-down 100ms ;
+          animation: slide-down 100ms ;
  }
 
 
@@ -133,7 +131,7 @@ body, html{
     font-size: 8vw!important;
   }
    .medium-text{
-     font-size: 3vmin;
+     font-size: 3.1vmin;
    }
  }
   @media screen and  (min-width: 760px){
@@ -218,6 +216,9 @@ body, html{
   .font-light{
     font-weight: 400;
   }
+  .font-lighter{
+    font-weight: 300;
+  }
   .font-bolder{
     font-weight: bolder;
   }
@@ -264,7 +265,7 @@ body, html{
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-    opacity: 0;
+    opacity: 0.8;
     z-index: 10;
   }
   @media (hover: hover) {
@@ -278,7 +279,7 @@ body, html{
     background-color: var(--darkCyan);
   }
   .up-slide-in{
-    opacity: 1!important;
+    opacity: 0.8!important;
     -webkit-animation: slide-left 400ms ease-in-out;
             animation: slide-left 400ms ease-in-out;
   }
@@ -292,7 +293,7 @@ body, html{
               transform: translateX(+100%);
     }
     100%{
-      opacity: 1;
+      opacity: 0.8;
       -webkit-transform: translateX(0%);
               transform: translateX(0%);
     }
@@ -304,7 +305,7 @@ body, html{
               transform: translateX(+100%);
     }
     100%{
-      opacity: 1;
+      opacity: 0.8;
       -webkit-transform: translateX(0%);
               transform: translateX(0%);
     }

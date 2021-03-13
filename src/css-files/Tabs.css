@@ -11,7 +11,6 @@
     top: 0;
     background-color: var(--dark-grey);
     z-index: 4;
-    border-bottom: 2px solid var(--red);
 }
 .tab-container{
     cursor: pointer;
@@ -20,8 +19,11 @@
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
+    border-left: 1px solid rgba(255, 255, 255, 0.194);
+    border-right: 1px solid rgba(255, 255, 255, 0.194);
+    
 }
-.red-border{
+.selected-tab{
     color: var(--darkCyan);
 }
 @media (hover: hover) {
