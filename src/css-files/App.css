@@ -18,15 +18,7 @@ html{
 } */
 
 /*add body to below style */
-body {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-}
 
-html {
-  height: -webkit-fill-available;
-}
 body, html{
   overflow: hidden;
   -ms-touch-action: none;
