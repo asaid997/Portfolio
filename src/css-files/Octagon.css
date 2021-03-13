@@ -10,10 +10,10 @@
     top: 0;
   }
 .dark{
-    background: #FF6B6B;
+    background: var(--red);
 }
 .light{
-      background: #04c2c9;
+      background: var(--lightCyan);
   }
 .nonagon-container{
     position: relative;

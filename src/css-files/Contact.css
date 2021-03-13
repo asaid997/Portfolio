@@ -1,10 +1,21 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 #contact-container div{
     margin-top: 3vh;
 }
 .center{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 0fr 1fr;
     grid-template-columns: 0fr 1fr;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .icon-contact{
@@ -13,15 +24,21 @@
 
 #icons-container{
     margin-top: 2vh;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .cyan{
-    color: #00a1a7;
+    color: var(--darkCyan);
 }
 .icon-c{
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 .icon-c:hover{
@@ -31,10 +48,13 @@
     margin-top: 2vh;
     border-radius: 5px;
     padding: 2vh;
-    background-color: #f5f6fa;
+    background-color: var(--paper-background);
     color: rgb(61, 61, 61);
+    display: -ms-grid;
     display: grid;
-    align-items: center;
-    -webkit-box-shadow: 2px 2px 8px grey;
-            box-shadow: 2px 2px 8px grey;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 2px 2px 8px var(--shadow-grey);
+            box-shadow: 2px 2px 8px var(--shadow-grey);
   }

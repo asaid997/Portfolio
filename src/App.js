@@ -1,8 +1,9 @@
+import './css-files/Colors.css';
 import './css-files/App.css';
 import './css-files/Animations.scss';
 import 'aos/dist/aos.css'
 import React, { createRef, useEffect, useLayoutEffect } from 'react';
-import { AppBar, Tab, Tabs } from '@material-ui/core';
+import Tabs from './Components/Helpers/Tabs'
 import { inject, observer } from 'mobx-react';
 import Home from './Components/Home';
 import ParticlesBg from 'particles-bg';
@@ -13,11 +14,11 @@ import Loading from './Components/Helpers/Loading';
 import Education from './Components/Education';
 import Projects from './Components/Projects';
 import Contact from './Components/Contact';
+import ScrollUp from './Components/Helpers/ScrollUp';
+
 
 function App(props) {
-  const { scrollHandler, styles } = props;
-  const { barStyles } = styles;
-  const navClasses = barStyles.useStyles();
+  const { scrollHandler } = props;
 
   //My component references
   const home = createRef(null);
@@ -31,20 +32,16 @@ function App(props) {
   useEffect(() => {
     Aos.refreshHard();
 
-    ////disable scrolling on non iphone devices
-    if(! /iPhone/i.test(navigator.userAgent) ) {
-        document.body.classList.add('unscrollable');
-     }
-
     //send all my sections to the scroll handler store
     scrollHandler.setComps(comps)
+    scrollHandler.index = 0;
     
     //remove lopading gif
     const loadingGif = document.getElementById("initial-loading");
     loadingGif && loadingGif.remove();
 
     //initialise aos(animation on scroll) to start working after 1.5 seconds
-    setTimeout(() => Aos.init({ duration: 450, once: true, easing: 'ease-in-sine' }), 1500)
+    setTimeout(() => Aos.init({ duration: 450, once: true}), 1500)
   }, [])
 
   useLayoutEffect(() => {
@@ -61,31 +58,35 @@ function App(props) {
     window.scrollTo(0, document.body.scrollHeight);
     comps.forEach((_, i) => setTimeout(() => comps[comps.length - 1 - i].current.scrollIntoView({ behavior: 'smooth', block: 'start' }), ((i + 1) * 200)))
 
+    // document.body.classList.add("unscrollable");
+    // if (typeof window.orientation === 'undefined') { document.body.classList.add("unscrollable"); }
+    // else{
+      // window.addEventListener('scroll', function() {
+      //   console.log(window.pageYOffset + 'px',window);
+      // });
+    // }
+
   }, []);
 
   useEffect(() => scrollHandler.triggerScrollAndUnlock(), [scrollHandler.index]);
 
   return (
-    <div id="container" 
-    // onTouchMove={scrollHandler.touchHandle}
-    className={`${scrollHandler.scrollable}`}
-    >
+    <div id="container">
+      <ScrollUp />
       <Loading toShow={scrollHandler.toShowLoading} />
       <ParticlesBg num={4} type="square" bg={true} />
-      <AppBar className="bar">
-        <Tabs classes={{ indicator: navClasses.indicator, root: navClasses.bar }} value={scrollHandler.index} onChange={scrollHandler.handleTabChange} centered>
-          {sections.map((s, i) => <Tab className={`slide-bar ${navClasses.tabRoot}`} key={s} label={s} />)}
-        </Tabs>
-      </AppBar>
+      <Tabs sections={sections}/>
       <div className="App"
         onWheel={scrollHandler.wheelHandler}
         onTouchStart={scrollHandler.handleTouchStart}
-        onTouchEnd={scrollHandler.handleTouchEnd}>
-        <div className="section home" ref={home}><Home /></div>
-        <div className="section white-background padding-5" ref={about}><About /></div>
-        <div className="section padding-5" ref={education}><Education /></div>
-        <div className="section white-background padding-5" ref={projects}> <Projects /></div>
-        <div className="half-section" ref={contact}> <Contact /></div>
+        onTouchMove={scrollHandler.handleTouchMove}
+        onTouchEnd={scrollHandler.handleTouchEnd}
+        >
+        <div className="section home scroll-snap" ref={home}><Home /></div>
+        <div className="section white-background padding-5 scroll-snap" ref={about}><About /></div>
+        <div className="section padding-5 scroll-snap" ref={education}><Education /></div>
+        <div className="section white-background padding-5 scroll-snap" ref={projects}> <Projects /></div>
+        <div className="half-section scroll-snap" ref={contact}> <Contact /></div>
       </div>
     </div>
   );

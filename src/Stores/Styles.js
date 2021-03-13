@@ -2,12 +2,12 @@ import { makeStyles } from '@material-ui/core';
 
 export class Styles {
     constructor() { 
-        this.lightCyan = "#04c2c9";
-        this.darkCyan = "#00a1a7";
-        this.red = "#FF6B6B";
+        this.lightCyan = "var(--lightCyan)";
+        this.darkCyan = "var(--darkCyan)";
+        this.red = "var(--red)";
         this.black = "black";
-        this.white = 'white';
-        this.grey = '#f5f6fa';
+        this.white = 'var(--white)';
+        this.grey = 'var(--paper-background)';
         this.background = "#e8ecf1";
         this.font = 'Raleway, Arial';
     }

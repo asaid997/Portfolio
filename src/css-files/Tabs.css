@@ -1,0 +1,31 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+#tabs{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: var(--dark-grey);
+    z-index: 4;
+    border-bottom: 2px solid var(--red);
+}
+.tab-container{
+    cursor: pointer;
+    color: var(--white);
+    height: 100%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.red-border{
+    color: var(--darkCyan);
+}
+@media (hover: hover) {
+    .tab-container:hover{
+        color: var(--darkCyan);
+    }
+}

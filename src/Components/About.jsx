@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProgressBar from './Helpers/ProgressBar';
 import DevicesIcon from '@material-ui/icons/Devices';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
@@ -31,6 +31,8 @@ function About() {
         ['Responsive','Layouts work on any device.',<DevicesIcon className="icon" style={{fontSize: iconSize}}/>],
     ]
     
+    useEffect(()=>{
+    },[])
     
     return (
         <Grid

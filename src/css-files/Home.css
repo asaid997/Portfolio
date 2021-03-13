@@ -1,0 +1,12 @@
+.intro{
+    font-size: 6vmin;
+}
+.medium-text-home{
+    font-size: 4vmin;          
+}
+
+.my-image {
+    border-radius: 100vh;
+    height: 20vh;
+    box-shadow: 2px 8px 8px grey;
+}
