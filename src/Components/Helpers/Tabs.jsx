@@ -2,10 +2,16 @@ import { Grid } from '@material-ui/core'
 import { inject, observer } from 'mobx-react'
 import React from 'react'
 import '../../css-files/Tabs.css'
+import HomeIcon from '@material-ui/icons/Home';//home
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';//about
+import AppsIcon from '@material-ui/icons/Apps';//projects
+import SchoolIcon from '@material-ui/icons/School';//education
+import PhoneIcon from '@material-ui/icons/Phone';//contact
 
 function Tabs(props) {
     const {scrollHandler, sections} = props;
     const p = {justify: "center", alignItems: "center", direction: "row"};
+    const arr = [<HomeIcon/>,<PermIdentityIcon/>,<AppsIcon/>,<SchoolIcon/>,<PhoneIcon/>];
 
     const Tab = (s,i) => {
         const tabHandle = () => scrollHandler.handleTabChange(null,i);
@@ -14,7 +20,7 @@ function Tabs(props) {
         key={s} item xs={2} container {...p}
         onClick={tabHandle}
         >
-                <div>{s.length > 5 && window.innerWidth < 700? s.slice(0,4) : s}</div>
+                <div>{window.innerWidth < 700? arr[i] : s}</div>
         </Grid>
         )
     }
