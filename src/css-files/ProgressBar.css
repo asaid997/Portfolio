@@ -3,7 +3,7 @@
     height: 6%;
     background-color: var(--paper-background);
     border-radius: 2px;
-    font-size: 1.6vh;
+    font-size: calc(var(--vh, 1vh) * 1.6);
     position: relative;
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;

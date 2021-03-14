@@ -1,0 +1,16 @@
+:root{
+    --white-background: #eff1f5;
+    --paper-background: #f5f6fa;
+    --shadow-grey: grey;
+    --darker-grey: #181a20;
+    --dark-grey: #252934;
+    --lightCyan: #04c2c9;
+    --darkCyan: #00a1a7;
+    --asphalt: #34495e;
+    --white: white;
+    --red: #FF6B6B;
+}
+
+:root{
+    /* --vh: 1vh; */
+}

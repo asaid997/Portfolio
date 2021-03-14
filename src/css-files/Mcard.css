@@ -6,7 +6,7 @@
 */
 
 .card-container{
-    margin-top: 2vh;
+    margin-top: calc(var(--vh, 1vh) * 2);;
     border-radius: 6px!important;
 }
 
@@ -98,16 +98,13 @@
 @media screen and (min-width: 320px) {
     .card {
         width: 40vw;
-        height: 34vh;
+        /* height: calc(var(--vh, 1vh) * 34); */
     }
     .card-media-container, .card-media-container-projects{
-        height: 16.5vh;
-    }
-    .content-container {
-        height: 12vh;
+        height: calc(var(--vh, 1vh) * 16.5);
     }
     .btn {
-        height: 5.5vh;
+        height: calc(var(--vh, 1vh) * 5.5);
     }
     .btn-icon {
         font-size: 5vmin!important;
@@ -119,17 +116,14 @@
 
 @media screen and (min-width: 760px) {
     .card {
-        width: 30vw;
-        height: 35vh;
-    }
-    .card-media-container, .card-media-container-projects{
-        height: 16.5vh;
+        width: 35vw;
+        height: calc(var(--vh, 1vh) * 35);
     }
     .content-container {
-        height: 11vh;
+        height: calc(var(--vh, 1vh) * 11);
     }
     .btn {
-        height: 7.5vh;
+        height: calc(var(--vh, 1vh) * 7.5);
     }
     .btn-icon {
         font-size: 4vmin!important;
@@ -139,16 +133,13 @@
 @media screen and (min-width: 1085px) {
     .card {
         width: 20vw;
-        height: 45vh;
+        height: calc(var(--vh, 1vh) * 45);
     }
     .card-media-container, .card-media-container-projects{
-        height: 28vh;
-    }
-    .content-container {
-        height: 11vh;
+        height: calc(var(--vh, 1vh) * 28);
     }
     .btn {
-        height: 7vh;
+        height: calc(var(--vh, 1vh) * 7);
     }
     .btn-icon {
         font-size: 4vmin!important;

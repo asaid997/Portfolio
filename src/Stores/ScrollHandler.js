@@ -1,3 +1,4 @@
+import { FormatColorResetTwoTone } from '@material-ui/icons';
 import { observable, action, makeAutoObservable, set } from 'mobx'
 
 export class ScrollHandler {
@@ -5,8 +6,10 @@ export class ScrollHandler {
         this.index = 0;
         this.first = false;
         this.lock = true;
-        this.lockTouch = true;
-        this.touchLock = true;
+        this.touchLock = 10;
+        //app crashes during the initial bot -> top animation if we scroll
+        //this lock prevents a scroll during that time
+        this.initialLock = false;
         this.timeout = null;
         this.down = null;
         this.comps = [];
@@ -21,14 +24,7 @@ export class ScrollHandler {
             handleTouchStart: action,
             handleTouchEnd: action,
             setComps: action
-        })
-        const body = document.body,
-            html = document.documentElement;
-
-        this.height = Math.max(body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight);
-
-        this.el = null;
+        });
     }
     setComps = arr => this.comps = arr;
     getComp = i => this.comps[i];
@@ -37,9 +33,8 @@ export class ScrollHandler {
     scrollTo = comp => {
         //with the way react is and because i added a listener to the index var the useeffect will trigger 
         //a scroll to the first component(index initialised with 0) this basically checks if its the first and unwanted scroll request
-        if (this.first) {
+        if (this.first) 
             comp.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
         else
             this.first = true;
     }
@@ -69,9 +64,8 @@ export class ScrollHandler {
         this.downY = this.down.screenY;
         this.touchLock = 0;
     }
-
     handleTouchMove = e => {
-        if (this.touchLock === 2) {
+        if (this.touchLock === 2 && this.initialLock) {
             const y = e.changedTouches[0].screenY;
             const distY = y - this.downY;
             const threshold = 0;
@@ -93,7 +87,7 @@ export class ScrollHandler {
     }
     //Wheel scroll handler
     wheelHandler = e => {
-        if (this.lock) {
+        if (this.lock && this.initialLock) {
             const scroll = e.deltaY;
             if (Math.abs(scroll) > 0) {
                 this.lock = false;

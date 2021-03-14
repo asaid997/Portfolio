@@ -8,6 +8,7 @@
 #tabs{
     width: 100%;
     position: fixed;
+    height: calc(var(--vh, 1vh) * 6);;
     top: 0;
     background-color: var(--dark-grey);
     z-index: 4;

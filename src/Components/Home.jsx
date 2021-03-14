@@ -33,7 +33,7 @@ function Home() {
                 imageStyles="my-image"/> */}
                 
             <h1 data-aos="zoom-in" className="text-style intro font-light">Hello, I'm Androw</h1>
-            <h3 id="typEffect" className="text-style font-lighter medium-text-home"></h3>
+            <h3 id="typEffect" className="text-style font-light medium-text-home"></h3>
         </Grid>
     )
 }

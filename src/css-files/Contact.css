@@ -6,7 +6,7 @@
 */
 
 #contact-container div{
-    margin-top: 3vh;
+    margin-top: calc(var(--vh, 1vh) * 3);
 }
 .center{
     display: -ms-grid;
@@ -23,7 +23,7 @@
 }
 
 #icons-container{
-    margin-top: 2vh;
+    margin-top: calc(var(--vh, 1vh) * 2);
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -45,9 +45,9 @@
     opacity: 0.8;
 }
 #contact-container{
-    margin-top: 2vh;
+    margin-top: calc(var(--vh, 1vh) * 2);
     border-radius: 5px;
-    padding: 2vh;
+    padding: calc(var(--vh, 1vh) * 2);
     background-color: var(--paper-background);
     color: rgb(61, 61, 61);
     display: -ms-grid;

@@ -1,4 +1,4 @@
-import './css-files/Colors.css';
+import './css-files/RootVars.css';
 import './css-files/App.css';
 import './css-files/Animations.scss';
 import 'aos/dist/aos.css'
@@ -16,6 +16,14 @@ import Projects from './Components/Projects';
 import Contact from './Components/Contact';
 import ScrollUp from './Components/Helpers/ScrollUp';
 
+function Iphone() {
+  return [
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+}
 
 function App(props) {
   const { scrollHandler } = props;
@@ -32,16 +40,25 @@ function App(props) {
   useEffect(() => {
     Aos.refreshHard();
 
+    //make viewport smaller due to the bottom bar of safari on iphones
+    if (Iphone()) {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
     //send all my sections to the scroll handler store
     scrollHandler.setComps(comps)
     scrollHandler.index = 0;
-    
+
     //remove lopading gif
     const loadingGif = document.getElementById("initial-loading");
     loadingGif && loadingGif.remove();
-    
+
     //initialise aos(animation on scroll) to start working after 1.5 seconds
-    setTimeout(() => Aos.init({ duration: 450, once: true}), 1500)
+    setTimeout(() => {
+      Aos.init({ duration: 450, once: true });
+      scrollHandler.initialLock = true;
+    }, 1500)
   }, []);
 
   useLayoutEffect(() => {
@@ -67,13 +84,13 @@ function App(props) {
       <ScrollUp />
       <Loading toShow={scrollHandler.toShowLoading} />
       <ParticlesBg num={4} type="square" bg={true} />
-      <Tabs sections={sections}/>
+      <Tabs sections={sections} />
       <div id="app"
         onWheel={scrollHandler.wheelHandler}
         onTouchStart={scrollHandler.handleTouchStart}
         onTouchMove={scrollHandler.handleTouchMove}
         onTouchEnd={scrollHandler.handleTouchEnd}
-        >
+      >
         <div className="section home not-selectable" ref={home}><Home /></div>
         <div className="section white-background padding-5 not-selectable" ref={about}><About /></div>
         <div className="section padding-5 not-selectable" ref={education}><Education /></div>

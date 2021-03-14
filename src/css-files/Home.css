@@ -6,7 +6,7 @@
 }
 
 .my-image {
-    border-radius: 100vh;
-    height: 20vh;
+    border-radius: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 20);
     box-shadow: 2px 8px 8px grey;
 }
