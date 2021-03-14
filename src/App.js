@@ -83,7 +83,7 @@ function App(props) {
     <div id="container">
       <ScrollUp />
       <Loading toShow={scrollHandler.toShowLoading} />
-      <ParticlesBg num={4} type="square" bg={true} />
+      {/* <ParticlesBg num={4} type="square" bg={true} /> */}
       <Tabs sections={sections} />
       <div id="app"
         onWheel={scrollHandler.wheelHandler}
