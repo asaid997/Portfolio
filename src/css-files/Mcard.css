@@ -103,6 +103,9 @@
     .card-media-container, .card-media-container-projects{
         height: calc(var(--vh, 1vh) * 16.5);
     }
+    .content-container {
+        height: calc(var(--vh, 1vh) * 14);
+    }
     .btn {
         height: calc(var(--vh, 1vh) * 5.5);
     }
