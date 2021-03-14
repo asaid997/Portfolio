@@ -2,11 +2,11 @@ import './css-files/RootVars.css';
 import './css-files/App.css';
 import './css-files/Animations.scss';
 import 'aos/dist/aos.css'
-import React, { createRef, useEffect, useLayoutEffect, useState } from 'react';
+import React, { createRef, useEffect, useLayoutEffect } from 'react';
 import Tabs from './Components/Helpers/Tabs'
 import { inject, observer } from 'mobx-react';
 import Home from './Components/Home';
-import ParticlesBg from 'particles-bg';
+import ParticlesBg from './Components/Helpers/ParticlesBg';
 import About from './Components/About';
 import Aos from 'aos'
 import smoothscroll from 'smoothscroll-polyfill';
