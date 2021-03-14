@@ -93,8 +93,8 @@ function App(props) {
       >
         <div className="section home not-selectable" ref={home}><Home /></div>
         <div className="section white-background padding-5 not-selectable" ref={about}><About /></div>
-        <div className="section padding-5 not-selectable" ref={education}><Education /></div>
-        <div className="section white-background padding-5 not-selectable" ref={projects}> <Projects /></div>
+        <div className="section padding-5 not-selectable" ref={projects}> <Projects /></div>
+        <div className="section white-background padding-5 not-selectable" ref={education}><Education /></div>
         <div className="half-section" ref={contact}> <Contact /></div>
       </div>
     </div>
