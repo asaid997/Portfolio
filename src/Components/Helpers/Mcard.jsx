@@ -15,7 +15,7 @@ export default function Mcard(props) {
     <div className="card-container not-selectable" 
     style={{boxShadow: arr[3] ? `1px 1px 6px ${arr[3]}` : 'lightgrey'}}
     data-aos="my-flip-right" 
-    data-aos-delay={`${i * 3 + 6}00`} 
+    data-aos-delay={`${i * 3 + 8}00`} 
     >
       <Card className={`card ${arr[2] === 'voice' ? 'in-progress' : {}}`}>
           <div className={arr[6] ? 'card-media-container-projects' : 'card-media-container' }>

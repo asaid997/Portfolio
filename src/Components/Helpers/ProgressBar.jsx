@@ -11,9 +11,9 @@ function ProgressBar(props) {
                 {props.subject}
             </div>
             <div style={{ width: `${percent - 20}%` }} className="progress-container">
-                <div data-aos="width-ease" data-aos-duration="600" 
+                <div data-aos="width-ease" data-aos-duration="400" 
                 data-aos-anchor=".all-progress-container"
-                data-aos-delay={`${i + 14}00`}
+                data-aos-delay={`${i + 12}00`}
                  className="progress"></div>
             </div>
             <div className="percent">

@@ -56,7 +56,7 @@ function App(props) {
 
     //initialise aos(animation on scroll) to start working after 1.5 seconds
     setTimeout(() => {
-      Aos.init({ duration: 450, once: true });
+      Aos.init({ duration: 300, once: true });
       scrollHandler.initialLock = true;
     }, 1500)
   }, []);

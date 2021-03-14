@@ -43,7 +43,7 @@ function About() {
         >
             <Title title="About"/>
             <Grid item container direction="column" justify="center" alignItems="center" xs={12}>
-                    <div className="paper-container medium-text font-bolder" data-aos="zoom-in-right" data-aos-delay="700">
+                    <div className="paper-container medium-text font-bolder" data-aos="zoom-in-right" data-aos-delay="500">
                             <ul>
                                 <li>Enrolled in a BSc of computer sience.</li>
                                 <li>Software developer who loves to build and create.</li>
@@ -54,7 +54,7 @@ function About() {
             </Grid>
 
             <Grid id="about-skills" item container direction="row" >
-                <Grid className="all-progress-container" item container data-aos="my-slide-right" data-aos-delay="700" data-aos-duration="900"
+                <Grid className="all-progress-container" item container data-aos="my-slide-right" data-aos-delay="700" data-aos-duration="500"
                  justify="center" alignItems="center" xs={12} md={6} spacing={2}>
                     {subjects.map((s,i) => <ProgressBar key={s[0]} subject={s[0]} percent={s[1]} i={i}/>)}
                 </Grid>

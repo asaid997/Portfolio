@@ -12,7 +12,7 @@ function Home() {
             strings: ['Full Stack Developer', 'Software Developer'],
             autoStart: true,
             loop: true
-        }),1500);
+        }),1000);
     }, [])
 
     return (

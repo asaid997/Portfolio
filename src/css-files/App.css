@@ -66,6 +66,9 @@ body, html {
 .white-background {
   background-color: var(--white-background);
 }
+.background{
+  background-color: var(--background);
+}
 
 .padding-5 {
   padding-top: calc(var(--vh, 1vh) * 5);
