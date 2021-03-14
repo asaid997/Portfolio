@@ -34,8 +34,8 @@ function App(props) {
   const education = createRef(null);
   const projects = createRef(null);
   const contact = createRef(null);
-  const comps = [home, about, education, projects, contact];
-  const sections = ['Home', 'About', 'Education', 'Projects', 'Contact']
+  const comps = [home, about, projects, education, contact];
+  const sections = ['Home', 'About', 'Projects', 'Education', 'Contact'];
 
   useEffect(() => {
     Aos.refreshHard();

@@ -26,8 +26,8 @@ function About() {
     const iconSize = '6vmin';
     const tablets = [
         ['Team player','Commited to my teams success.',<GroupOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
-        ['Clean code','Follows oop and mvc principles.',<CodeOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
         ['Organized','Carefully plan projects.',<PlaylistAddCheckIcon className="icon" style={{fontSize: iconSize}}/>],
+        ['Clean code','Follows oop and mvc principles.',<CodeOutlinedIcon className="icon" style={{fontSize: iconSize}}/>],
         ['Responsive','Layouts work on any device.',<DevicesIcon className="icon" style={{fontSize: iconSize}}/>],
     ]
     
