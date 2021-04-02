@@ -48,7 +48,7 @@ function About() {
                                 <li>Enrolled in a BSc of computer sience.</li>
                                 <li>Software developer who loves to build and create.</li>
                                 <li>Love exploring new domains of programming and computer sience.</li>
-                                <li>Currently seeking an entry position.</li>
+                                <li>Currently seeking my next challenge.</li>
                             </ul>
                     </div>
             </Grid>
