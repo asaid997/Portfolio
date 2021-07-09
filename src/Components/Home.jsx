@@ -9,7 +9,7 @@ function Home() {
 
     useEffect(() => {
         setTimeout(() => new Typewriter('#typEffect', {
-            strings: ['Full Stack Developer', 'Software Developer'],
+            strings: ['DevOps Engineer'],
             autoStart: true,
             loop: true
         }),1000);
